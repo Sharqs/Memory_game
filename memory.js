@@ -11,7 +11,7 @@ window.onload=function(){
             a[j] = x;
         }
         return a;
-    }
+    }/*
     function noMatch { // make class front visible
 
     }
@@ -40,5 +40,5 @@ window.onload=function(){
             }
         }
     }
-
+    */
 }
