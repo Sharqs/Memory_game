@@ -9,3 +9,8 @@ body{
 img{
     width: 150 px;
 }
+.game{
+    display:grid;
+    grid-auto-columns: repeat(3, 1 fr);
+    
+}
