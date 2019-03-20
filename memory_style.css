@@ -5,7 +5,7 @@
 }
 html, body{
     height: 100%;
-    background-image: url(/proj_images/heart.jpg);
+    background-image: url(proj_images/heart.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,5 +16,16 @@ img{
 .game{
     display:grid;
     grid-auto-columns: repeat(3, 1 fr);
+    grid-auto-rows: repeat(4, 1fr);
+    position: relative;
+
+}
+.card{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 300 px;
+    width: 200 px;
 
 }
