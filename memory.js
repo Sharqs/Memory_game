@@ -12,25 +12,26 @@ window.onload=function(){
         }
         return a;
     }/*
-    function noMatch { // make class front visible
+    function noMatch { // flip to front class again
 
     }
     function flip (e){
         e.preventdefault();
-        
-        if (match.length === 1){    // 2nd click
-            if (e.target.classname === match[0]){  //match
-                matched++                   // number of matches
+        if (match.length<2){
+            if (match.length === 1){    // 2nd click
+                if (e.target.classname === match[0]){  //match
+                    matched++                   // number of matches
                                             // toggle current on
-                if (matched >= 6) {
-                    winner          // result screen if I have time
+                    if (matched >= 6) {
+                        winner          // result screen if I have time
+                    }
+                }
+                else {
+                    (setTimeout(function(){noMatch()}, 1000,ms)  // toogle flip back
                 }
             }
-            else {
-                (setTimeout(function(){noMatch()}, 1000,ms)  // toogle flip back
+            else{ // .toggle
             }
-        }
-        else{ // .toggle
         }
     }
     */
