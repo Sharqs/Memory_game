@@ -23,6 +23,7 @@ header{
     margin: 10px;
     height: 90%;
     justify-content: center;
+    perspective: 1000;
 
 }
 .card{
@@ -33,9 +34,7 @@ header{
     position: relative;
     transition: transform 500ms ease-in-out;
     transform: scale(1);
-    /*
-    perspective: 1000;
-    */
+    transform-style: preserve-3d;
 }
 .card.front card.flip{
     transform:rotateY(-180deg)

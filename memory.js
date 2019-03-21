@@ -4,6 +4,7 @@ window.onload=function(){
     var match = [];
     var matched = 0;
     var busy = false;
+    var clicks = 0;
 
 
     function shuffle(a) {
@@ -32,20 +33,24 @@ window.onload=function(){
             if (match.length === 1){    // 2nd click
                 if (this.dessert-type === match[0].dessert-type){  //match
                     matched++                   // number of matches
-                    this.classlist.toggle('flip')  // toggle current on
+                    this.classlist.toggle('flip');  // toggle current on
+                    clicks++
                     match = [];
+                    /*
                     if (matched >= 6) {
                         winner          // result screen if I have time
                     }
+                    */
                 }
                 else {
                     busy = true;
-                    (setTimeout(function(){noMatch()}, 1000,ms)  // toogle flip back
+                    (setTimeout(function(){noMatch()}, 1000))  // toogle flip back
                 }
             }
-            else{ 
+            else{  // 1st click
                 this.classlist.toggle('flip');
-                match.push(this)// .toggle
+                clicks++;
+                match.push(this)     // .toggle 
             }
         }
     }
