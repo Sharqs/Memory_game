@@ -30,7 +30,7 @@ window.onload=function(){
         }
         if (match.length<2){
             if (match.length === 1){    // 2nd click
-                if (this.dessert-type === match[0].dessert-type){  //match
+                if (this.dessert === match[0].dessert){  //match
                     matched++                   // number of matches
                     this.classList.toggle("flip");  // toggle current on
                     clicks++
