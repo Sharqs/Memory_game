@@ -19,13 +19,12 @@ window.onload=function(){
     }
     
     function noMatch () { 
-        match.forEach(x=> x.classlist.toggle('first'))
+        match.forEach(x=> x.classList.toggle("flip"))
         match = [];
         busy = false;
     }
 
-    function flip (e){
-        e.preventdefault();
+    function flip (){
         if(busy){
             return;
         }
@@ -33,7 +32,7 @@ window.onload=function(){
             if (match.length === 1){    // 2nd click
                 if (this.dessert-type === match[0].dessert-type){  //match
                     matched++                   // number of matches
-                    this.classlist.toggle('flip');  // toggle current on
+                    this.classList.toggle("flip");  // toggle current on
                     clicks++
                     match = [];
                     /*
@@ -48,7 +47,7 @@ window.onload=function(){
                 }
             }
             else{  // 1st click
-                this.classlist.toggle('flip');
+                this.classList.toggle("flip");
                 clicks++;
                 match.push(this)     // .toggle 
             }
