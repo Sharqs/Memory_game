@@ -39,3 +39,12 @@ header{
     object-fit: contain;
     position: absolute;
 }
+footer{
+    position: absolute;
+    left: 46%;
+    bottom: 10px;
+
+}
+button{
+    font-size: 20px;
+}
