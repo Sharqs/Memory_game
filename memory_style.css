@@ -18,7 +18,7 @@ header{
 }
 .game{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5px;
     margin: 10px;
     height: 90%;
@@ -30,24 +30,26 @@ header{
     justify-content: center;
     align-content: center;
     height: 175px;
-    
     position: relative;
+    transition: transform 500ms ease-in-out;
+    transform: scale(1);
     /*
     perspective: 1000;
     */
 }
-    /*
-.card.flip{
+.card.front card.flip{
+    transform:rotateY(-180deg)
+}
+.card.back card.flip{
     transform:rotateY(180deg)
 }
-
-    */
 
 .front, .back{
     height: 100%;
     width: 100%;
     object-fit: contain;
     position: absolute;
+    backface-visibility: hidden;
 }
 footer{
     display: flex;

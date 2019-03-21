@@ -1,5 +1,7 @@
 window.onload=function(){
     var array = ['1','2','3','4','5','6','7','8','9','10','11','12']; // these may have to be the actual imgs
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(x=> x.addEventListener('click',flip));
     var match = [];
     var matched = 0;
     function shuffle(a) {
@@ -11,7 +13,9 @@ window.onload=function(){
             a[j] = x;
         }
         return a;
-    }/*
+    }
+    
+    /*
     function noMatch { // flip to front class again
 
     }
