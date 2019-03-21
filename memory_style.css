@@ -19,7 +19,6 @@ header{
 .game{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
     row-gap: 5px;
     margin: 10px;
     height: 90vh;

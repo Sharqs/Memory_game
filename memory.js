@@ -1,5 +1,5 @@
 window.onload=function(){
-    var array = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+    var array = ['1','2','3','4','5','6','7','8','9','10','11','12']; // these may have to be the actual imgs
     var match = [];
     var matched = 0;
     function shuffle(a) {
@@ -21,23 +21,16 @@ window.onload=function(){
         if (match.length === 1){    // 2nd click
             if (e.target.classname === match[0]){  //match
                 matched++                   // number of matches
+                                            // toggle current on
                 if (matched >= 6) {
                     winner          // result screen if I have time
                 }
             }
             else {
-                (setTimeout(function(){noMatch()}, 1000,ms)  //flip back
+                (setTimeout(function(){noMatch()}, 1000,ms)  // toogle flip back
             }
         }
-        else{ // 1st or 3rd click
-            if (match === undefined){ // 1st click
-                match.push(e.target.classname)
-            }
-        }
-            else{                   // 3rd click (aka they clicked again before 1 sec timeout fired)
-                noMatch();
-                flip(e)
-            }
+        else{ // .toggle
         }
     }
     */
