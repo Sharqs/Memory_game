@@ -1,9 +1,11 @@
 window.onload=function(){
-    var array = ['1','2','3','4','5','6','7','8','9','10','11','12']; // these may have to be the actual imgs
     var cards = document.querySelectorAll('.card');
     cards.forEach(x=> x.addEventListener('click',flip));
     var match = [];
     var matched = 0;
+    var busy = false;
+
+
     function shuffle(a) {
         var j, x, i;
         for (i = a.length - 1; i > 0; i--) {
@@ -15,30 +17,41 @@ window.onload=function(){
         return a;
     }
     
-    /*
-    function noMatch { // flip to front class again
-
+    function noMatch { 
+        match.forEach(x=> x.classlist.toggle('first'))
+        match = [];
+        busy = false;
     }
+    
     function flip (e){
         e.preventdefault();
+        if(busy){
+            return;
+        }
         if (match.length<2){
             if (match.length === 1){    // 2nd click
-                if (e.target.classname === match[0]){  //match
+                if (this.dessert-type === match[0].dessert-type){  //match
                     matched++                   // number of matches
-                                            // toggle current on
+                    this.classlist.toggle('flip')  // toggle current on
+                    match = [];
                     if (matched >= 6) {
                         winner          // result screen if I have time
                     }
                 }
                 else {
+                    busy = true;
                     (setTimeout(function(){noMatch()}, 1000,ms)  // toogle flip back
                 }
             }
-            else{ // .toggle
+            else{ 
+                this.classlist.toggle('flip');
+                match.push(this)// .toggle
             }
         }
     }
     */
+   /*
    var button = document.querySelector("button")
     button.addEventListener("click",)           // shuffle/refresh
+    */
 }
