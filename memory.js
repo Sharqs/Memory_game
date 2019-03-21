@@ -17,12 +17,12 @@ window.onload=function(){
         return a;
     }
     
-    function noMatch { 
+    function noMatch () { 
         match.forEach(x=> x.classlist.toggle('first'))
         match = [];
         busy = false;
     }
-    
+
     function flip (e){
         e.preventdefault();
         if(busy){
