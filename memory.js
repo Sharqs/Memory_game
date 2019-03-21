@@ -28,29 +28,27 @@ window.onload=function(){
         if(busy){
             return;
         }
-        if (match.length<2){
-            if (match.length === 1){    // 2nd click
-                if (this.dessert === match[0].dessert){  //match
-                    matched++                   // number of matches
-                    this.classList.toggle("flip");  // toggle current on
-                    clicks++
-                    match = [];
-                    /*
-                    if (matched >= 6) {
-                        winner          // result screen if I have time
-                    }
-                    */
+        if (match.length === 1){    // 2nd click
+            if (this.dataset.dessert === match[0].dataset.dessert){  //match
+                matched++                   // number of matches
+                this.classList.toggle("flip");  // toggle current on
+                clicks++
+                match = [];
+                /*
+                if (matched >= 6) {
+                    winner          // result screen if I have time
                 }
-                else {
-                    busy = true;
-                    (setTimeout(function(){noMatch()}, 1000))  // toogle flip back
-                }
+                */
             }
-            else{  // 1st click
-                this.classList.toggle("flip");
-                clicks++;
-                match.push(this)     // .toggle 
+            else {
+                busy = true;
+                (setTimeout(function(){noMatch()}, 1000))  // toogle flip back
             }
+        }
+        else{  // 1st click
+            this.classList.toggle("flip");
+            clicks++;
+            match.push(this)     // .toggle 
         }
     }
    /*

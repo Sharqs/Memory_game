@@ -11,6 +11,7 @@ html, body{
     background-attachment: fixed;
     text-align: center;
 }
+
 header{
     font-size: 50px;
     color: rgb(223, 150, 14);
@@ -36,11 +37,11 @@ header{
     transform: scale(1);
     transform-style: preserve-3d;
 }
-.card.front card.flip{
+.card.flip{
     transform:rotateY(-180deg)
 }
-.card.back card.flip{
-    transform:rotateY(180deg)
+.back{
+    transform: rotateY(180deg)
 }
 
 .front, .back{
