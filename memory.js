@@ -43,6 +43,7 @@ window.onload=function(){
             else {
                 busy = true;
                 this.classList.toggle("flip");
+                clicks++
                 (setTimeout(function(){noMatch()}, 1000))  // toogle flip back
             }
         }
