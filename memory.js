@@ -30,10 +30,14 @@ window.onload=function(){
         }
         if (match.length === 1){    // 2nd click
             if (this.dataset.dessert === match[0].dataset.dessert){  //match
+                busy = true;
                 matched++                   // number of matches
                 this.classList.toggle("flip");  // toggle current on
                 clicks++
+                match.push(this);
+                match.forEach(x=>x.removeEventListener("click", flip))
                 match = [];
+                busy = false;
                 /*
                 if (matched >= 6) {
                     winner          // result screen if I have time
