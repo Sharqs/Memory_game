@@ -10,12 +10,12 @@ window.onload=function(){
 
 
     function shuffle(a) {
-        var j, x, i;
+        var j, x, i;            //j is randomized index, x is a temp, 
         for (i = a.length - 1; i > 0; i--) {
             j = Math.floor(Math.random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
+            x = cards[i].style.order   // save curent value
+            cards[i].style.order = cards[j].style.order   // set current index to randomized value
+            cards[j].style.order = x   // the saved value in temp is assigned to randomized index
         }
         return a;
     }
@@ -63,6 +63,28 @@ window.onload=function(){
     
    /*
    var button = document.querySelector("button")
-    button.addEventListener("click",)           // shuffle/refresh
+    button.addEventListener("click",)           
+
+    so it has to have 3 pieces of functionality
+    1. reset the board to everything face down
+        classList.remove('flip')
+    2. shuffle -order value of css grid using cards variable
+        shuffle();
+    3. reset clicks
+        clicks = 0;
+        document.getElementById("counter").innerText = clicks
+
     */
+   var button = document.querySelector("button")
+   button.addEventListener("click",newGame)
+
+   function newGame (){
+       cards.forEach(x=> {x.removeEventListener("click",flip)
+        x.addEventListener("click",flip)
+        x.classList.remove('flip')})
+        shuffle();
+        clicks = 0;
+        document.getElementById("counter").innerText = clicks
+       
+   }
 }
