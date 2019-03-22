@@ -27,30 +27,24 @@ window.onload=function(){
     }
 
     function flip (){
-        if(busy){
+        if(busy){   // only 2 flips shown
             return;
         }
-        if(match[0] === this){
+        if(match[0] === this){  // can't click same thing twice
             return;
         }
         if (match.length === 1){    // 2nd click
-            if (this.dataset.dessert === match[0].dataset.dessert){  //match
+            if (this.dataset.dessert === match[0].dataset.dessert){
                 busy = true;
-                matched++                   // number of matches
-                this.classList.toggle("flip");  // toggle current on
+                this.classList.toggle("flip");
                 clicks++
                 document.getElementById("counter").innerText = clicks
                 match.push(this);
                 match.forEach(x=>x.removeEventListener("click", flip))
                 match = [];
                 busy = false;
-                /*
-                if (matched >= 6) {
-                    winner          // result screen if I have time
-                }
-                */
             }
-            else {
+            else {  // not a match
                 busy = true;
                 this.classList.toggle("flip");
                 clicks++
@@ -63,7 +57,7 @@ window.onload=function(){
             this.classList.toggle("flip");
             clicks++;
             document.getElementById("counter").innerText = clicks
-            match.push(this)     // .toggle 
+            match.push(this)     
         }
     }
     
