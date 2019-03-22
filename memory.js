@@ -5,6 +5,8 @@ window.onload=function(){
     var matched = 0;
     var busy = false;
     var clicks = 0;
+    document.getElementById("counter").innerText = clicks
+    
 
 
     function shuffle(a) {
@@ -28,12 +30,16 @@ window.onload=function(){
         if(busy){
             return;
         }
+        if(match[0] === this){
+            return;
+        }
         if (match.length === 1){    // 2nd click
             if (this.dataset.dessert === match[0].dataset.dessert){  //match
                 busy = true;
                 matched++                   // number of matches
                 this.classList.toggle("flip");  // toggle current on
                 clicks++
+                document.getElementById("counter").innerText = clicks
                 match.push(this);
                 match.forEach(x=>x.removeEventListener("click", flip))
                 match = [];
@@ -48,6 +54,7 @@ window.onload=function(){
                 busy = true;
                 this.classList.toggle("flip");
                 clicks++
+                document.getElementById("counter").innerText = clicks
                 match.push(this);
                 (setTimeout(function(){noMatch()}, 1000))  // toogle flip back
             }
@@ -55,9 +62,11 @@ window.onload=function(){
         else{  // 1st click
             this.classList.toggle("flip");
             clicks++;
+            document.getElementById("counter").innerText = clicks
             match.push(this)     // .toggle 
         }
     }
+    
    /*
    var button = document.querySelector("button")
     button.addEventListener("click",)           // shuffle/refresh
