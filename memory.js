@@ -7,19 +7,18 @@ window.onload=function(){
     var clicks = 0;
     document.getElementById("counter").innerText = clicks
     
-
-
-    function shuffle(a) {
+    /*
+    function shuffle() {
         var j, x, i;            //j is randomized index, x is a temp, 
-        for (i = a.length - 1; i > 0; i--) {
+        for (i = cards.length - 1; i > 0; i--) {
             j = Math.floor(Math.random() * (i + 1));
             x = cards[i].style.order   // save curent value
             cards[i].style.order = cards[j].style.order   // set current index to randomized value
             cards[j].style.order = x   // the saved value in temp is assigned to randomized index
         }
-        return a;
+        return cards;
     }
-    
+    */
     function noMatch () { 
         match.forEach(x=> x.classList.toggle("flip"))
         match = [];
@@ -82,7 +81,7 @@ window.onload=function(){
        cards.forEach(x=> {x.removeEventListener("click",flip)
         x.addEventListener("click",flip)
         x.classList.remove('flip')})
-        shuffle();
+        /*shuffle();*/
         clicks = 0;
         document.getElementById("counter").innerText = clicks
        
