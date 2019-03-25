@@ -1,13 +1,17 @@
 window.onload=function(){
     var cards = document.querySelectorAll('.card');
-    cards.forEach(x=> x.addEventListener('click',flip));
+    for (var i = 0; i<cards.length; i++){
+        cards[i].addEventListener('click',flip);
+        cards[i].style.order = i
+    }
+    shuffle();
     var match = [];
     var matched = 0;
     var busy = false;
     var clicks = 0;
     document.getElementById("counter").innerText = clicks
     
-    /*
+    
     function shuffle() {
         var j, x, i;            //j is randomized index, x is a temp, 
         for (i = cards.length - 1; i > 0; i--) {
@@ -18,7 +22,7 @@ window.onload=function(){
         }
         return cards;
     }
-    */
+    
     function noMatch () { 
         match.forEach(x=> x.classList.toggle("flip"))
         match = [];
@@ -81,7 +85,7 @@ window.onload=function(){
        cards.forEach(x=> {x.removeEventListener("click",flip)
         x.addEventListener("click",flip)
         x.classList.remove('flip')})
-        /*shuffle();*/
+        shuffle();
         clicks = 0;
         document.getElementById("counter").innerText = clicks
        
